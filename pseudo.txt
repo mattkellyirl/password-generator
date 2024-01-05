@@ -1,0 +1,58 @@
+// declare character strings
+var lowercase = "abc";
+var uppercase = "ABC";
+var numeric = "123";
+var special = "!@#";
+
+// declare password as empty string
+var password = "";
+
+// user chosen characters declared as empty string
+var availableChars = "";
+
+function generatePassword() {
+  // collect user password length
+  var passwordLength = prompt("How many characters would you like..");
+  if (passwordLength == null) {
+    return null;
+  }
+
+  if (passwordLength < 8 || passwordLength > 128 || passwordLength isNaN(passwordLength))
+    alert("Invalid Input");
+  }
+  // print passwordLength to console
+  console.log("Password length is " + passwordLength + " characters");
+
+  // collect user character choices
+  if (confirm("Do you want lowercase...")) {
+    availableChars = availableChars + lowercase;
+  }
+
+  if (confirm("Do you want uppercase...")) {
+    availableChars = availableChars + uppercase;
+  }
+
+  if (confirm("Do you want numeric...")) {
+    availableChars = availableChars + numeric;
+  }
+
+  if (confirm("Do you want special...")) {
+    availableChars = availableChars + special;
+  }
+
+  if (availableChars == "") {
+    alert("Please choose at least 1 character type...");
+  }
+  console.log("Available characters:" + availableChars);
+
+  // select a random character from the total availableChars string
+  // repeat for total length of passwordLength
+  for (var i = 0; i < (passwordLength); i++) {
+    var select = Math.floor(Math.random() * availableChars.length);
+    var selectChar = availableChars[select];
+    password = password + selectChar;
+  }
+}
+
+console.log("Generated Password:" + password);
+
