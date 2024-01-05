@@ -12,6 +12,7 @@ var password = "";
 var availableChars = "";
 
 function generatePassword() {
+  // Prompt the user for password length and repeat until valid input is provided or user cancels.
   var passwordLength = -1;
   var loopCount = 0;
   while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
@@ -47,6 +48,7 @@ function generatePassword() {
   }
   console.log("Available characters: " + availableChars);
 
+  //Select a random character from all available characters and append to password string. Repeat for each character in users chosen password length. 
   for (var i = 0; i < (passwordLength); i++) {
     var select = Math.floor(Math.random() * availableChars.length);
     var selectChar = availableChars[select];
