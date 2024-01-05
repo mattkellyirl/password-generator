@@ -48,7 +48,7 @@ function generatePassword() {
   }
   console.log("Available characters: " + availableChars);
 
-  //Select a random character from all available characters and append to password string. Repeat for each character in users chosen password length. 
+  // Select a random character from all available characters and append to password string. Repeat for each character in users chosen password length. 
   for (var i = 0; i < (passwordLength); i++) {
     var select = Math.floor(Math.random() * availableChars.length);
     var selectChar = availableChars[select];
